@@ -1,0 +1,18 @@
+const extensions = [
+  "streetsidesoftware.code-spell-checker",
+  "oouo-diogo-perdigao.docthis",
+  "dsznajder.es7-react-js-snippets",
+  "dbaeumer.vscode-eslint",
+  "xabikos.JavaScriptSnippets",
+  "ritwickdey.live-sass",
+  "DavidAnson.vscode-markdownlint",
+  "PKief.material-icon-theme",
+  "eg2.vscode-npm-script",
+  "esbenp.prettier-vscode",
+  "ChakrounAnas.turbo-console-log",
+  "humao.rest-client",
+  "Shan.code-settings-sync",
+  "burkeholland.simple-react-snippets",
+  "octref.vetur",
+  "DotJoshJohnson.xml",
+];
