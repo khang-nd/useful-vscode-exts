@@ -15,4 +15,6 @@ const extensions = [
   "burkeholland.simple-react-snippets",
   "octref.vetur",
   "DotJoshJohnson.xml",
+  "pranaygp.vscode-css-peek",
+  "msjsdiag.debugger-for-chrome",
 ];

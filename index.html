@@ -7,48 +7,62 @@
     <meta name="description"
         content="A collection of useful Visual Studio Code Extensions to ease your developer life.">
     <title>Useful VS Code Extensions</title>
+    <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <style>
+        body {
+            background: #f5f5f5;
+        }
+    </style>
     <script src="exts.js"></script>
     <script src="get.js"></script>
 </head>
 
 <body>
-    <div class="columns is-centered">
+    <div class="columns mb-0 is-centered">
         <div class="box column content is-two-thirds is-loading">
-            <h1 class="mt-4 has-text-centered">Useful Visual Studio Code Extensions</h1>
-            <table class="table is-hoverable is-striped is-fullwidth">
-                <thead>
-                    <th>No.</th>
-                    <th>Extension</th>
-                    <th>Author</th>
-                    <th>Installs</th>
-                    <th></th>
-                </thead>
-                <tbody id="container"></tbody>
-            </table>
-            <footer class="has-text-centered">
-                <a class="has-text-grey" href="https://github.com/khang-nd/vscode-exts" target="_blank">Crafted with ❤</a>
+            <div class="mt-4 has-text-centered">
+                <img class="is-hidden-touch" src="icon.png">
+                <h1>Useful Visual Studio Code Extensions</h1>
+            </div>
+            <div class="table-container">
+                <table class="table is-hoverable is-striped is-fullwidth">
+                    <thead>
+                        <th>No.</th>
+                        <th>Extension</th>
+                        <th>Author</th>
+                        <th>Installs</th>
+                        <th></th>
+                    </thead>
+                    <tbody id="container"></tbody>
+                </table>
+            </div>
+            <footer class="has-text-centered has-text-grey">
+                <a href="https://github.com/khang-nd">@khangnd</a> -
+                <a href="https://github.com/khang-nd/vscode-exts" target="_blank">Crafted with ❤</a>
             </footer>
         </div>
     </div>
 
     <script>
         getExtensions().then((extensions) => {
-            const rows = extensions.map((ext, i) =>
-                `<tr>
-                    <td>${i + 1}</td>
-                    <td>
-                        <a href="${ext.marketUrl}" target="_blank" rel="noopener">${ext.name}</a>
-                    </td>
-                    <td>${ext.author}</td>
-                    <td>${ext.installs}</td>
-                    <td>
-                        <a href="${ext.installUrl}">
-                            <img src="https://image.flaticon.com/icons/png/24/126/126476.png">
-                        </a>
-                    </td>
-                </tr>`
-            ).join("");
+            const rows = extensions
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map((ext, i) =>
+                    `<tr>
+                        <td>${i + 1}</td>
+                        <td>
+                            <a href="${ext.marketUrl}" target="_blank" rel="noopener">${ext.name}</a>
+                        </td>
+                        <td>${ext.author}</td>
+                        <td>${ext.installs}</td>
+                        <td>
+                            <a href="${ext.installUrl}">
+                                <img src="https://image.flaticon.com/icons/png/24/126/126476.png">
+                            </a>
+                        </td>
+                    </tr>`
+                ).join("");
             document.querySelector("#container").innerHTML = rows;
         })
     </script>
