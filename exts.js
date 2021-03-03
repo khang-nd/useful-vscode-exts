@@ -17,4 +17,5 @@ const extensions = [
   "DotJoshJohnson.xml",
   "pranaygp.vscode-css-peek",
   "msjsdiag.debugger-for-chrome",
+  "jock.svg",
 ];
